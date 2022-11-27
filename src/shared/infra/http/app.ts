@@ -1,9 +1,8 @@
-import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import routes from './routes';
 import AppError from '@shared/errors/AppError';
-import '@shared/typeorm';
+import '@shared/infra/typeorm';
 
 const app = express();
 
@@ -28,6 +27,4 @@ app.use(
   },
 );
 
-app.listen(3333, () => {
-  console.log('server is running on port 3333');
-});
+export { app };
