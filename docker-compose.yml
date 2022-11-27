@@ -38,12 +38,12 @@ services:
 
    pgadmin:
 
-     image: 'dpage/pgadmin4'
+     image: dpage/pgadmin4
      container_name: apivendas-pgadmin
      tty: true
      environment:
        - PGADMIN_DEFAULT_EMAIL=andreraizdetudo@gmail.com
-       - PGADMIN_PASSWORD=admin
+       - PGADMIN_DEFAULT_PASSWORD=docker
      ports:
        - "5050:80"
      depends_on:
