@@ -1,3 +1,5 @@
+import { CreateProducts1669556413739 } from './migrations/1669556413739-CreateProducts';
+import Product from '@modules/products/typeorm/entities/Product';
 import dotenv from 'dotenv';
 import { DataSource } from 'typeorm';
 
@@ -13,3 +15,6 @@ export const dataSource = new DataSource({
   entities: [`${__dirname}/**/entities/*.{ts,js}`],
   migrations: [`${__dirname}/**/migrations/*.{ts,js}`],
 });
+
+// migrations: //`${__dirname}/**/migrations/*.{ts}`
+//entities: `${__dirname}/**/entities/*.{ts,js}`
