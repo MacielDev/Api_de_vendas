@@ -1,7 +1,6 @@
 import { dataSource } from '@shared/infra/typeorm';
-import { Repository } from 'typeorm';
 
-import Product from '../../entities/Product';
+import Product from '@modules/products/typeorm/entities/Product';
 
 //Código Versão typeorm 0.3.x
 export const ProductRepository = dataSource.getRepository(Product).extend({

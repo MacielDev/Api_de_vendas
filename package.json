@@ -9,9 +9,10 @@
 		"lint": "eslint . --ext .ts",
 		"lint-fix": "eslint . --ext .ts --fix",
 		"typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+		"migration:generate": "typeorm-ts-node-commonjs -d ./src/shared/infra/typeorm migration:generate ./src/shared/infra/typeorm/migrations/default ",
 		"migration:create": "typeorm migration:create src/shared/infra/typeorm/migrations/default",
 		"migration:run": "typeorm-ts-node-commonjs -d ./src/shared/infra/typeorm migration:run",
-		"migration:revert": "typeorm-ts-node-commonjs -d ./src/shared/infra/typeorm migration:revert"
+		"migration:revert": "typeorm-ts-node-commonjs -d src/shared/infra/typeorm migration:revert"
 	},
 	"devDependencies": {
 		"@types/node": "^18.11.9",

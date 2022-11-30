@@ -1,5 +1,5 @@
 import AppError from '@shared/errors/AppError';
-import Product from '../typeorm/entities/Product';
+import Product from '@modules/products/typeorm/entities/Product';
 import { ProductRepository } from '../typeorm/repositories/ProductRepository/Repository';
 
 interface IRequest {

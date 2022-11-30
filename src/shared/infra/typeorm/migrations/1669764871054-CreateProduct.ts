@@ -1,7 +1,6 @@
-import { networkInterfaces } from 'os';
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class CreateProducts1669556413739 implements MigrationInterface {
+export class CreateProduct1669764871054 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({

@@ -7,17 +7,17 @@ import {
 } from 'typeorm';
 
 @Entity('products')
-class Product {
+export class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
   name: string;
 
-  @Column('decimal')
+  @Column({ type: 'decimal' })
   price: number;
 
-  @Column('int')
+  @Column({ type: 'int' })
   quantity: number;
 
   @CreateDateColumn()
