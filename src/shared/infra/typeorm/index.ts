@@ -11,9 +11,10 @@ export const dataSource = new DataSource({
   username: process.env.DB_USER,
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
-  entities: ['./src/modules/products/typeorm/entities/*.ts'],
-  migrations: [CreateProduct1669764871054],
+  entities: ['./src/modules/**/typeorm/entities/*.ts'],
+  migrations: ['./src/shared/typeorm/migrations'],
 });
 
 // migrations: //`${__dirname}/**/migrations/*.{ts,js}`
 //entities: `${__dirname}/**/entities/*.{ts,js}`
+//CreateProduct1669764871054
