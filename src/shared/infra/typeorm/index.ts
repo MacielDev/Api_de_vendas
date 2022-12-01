@@ -12,7 +12,7 @@ export const dataSource = new DataSource({
   password: process.env.DB_PASS,
   database: process.env.DB_NAME,
   entities: ['./src/modules/**/typeorm/entities/*.ts'],
-  migrations: ['./src/shared/typeorm/migrations'],
+  migrations: ['./src/shared/**/typeorm/migrations/*.ts'],
 });
 
 // migrations: //`${__dirname}/**/migrations/*.{ts,js}`

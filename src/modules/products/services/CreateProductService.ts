@@ -27,28 +27,3 @@ class CreateProductService {
 }
 
 export default CreateProductService;
-
-/* Código typeorm versão 0.2.x
-
-class CreateProductService{
-	public async execute({ name,price,quantity }:IRequest):Promise<Product | null>{
-		 const productsRepository = getCustomRepository(ProductRepository);
-		 const productExists = await productRepository.getByName(name);
-		 if(productExists){
-				throw new AppError('there is already one product with this name');
-				return null;
-		 }
-		 const product = productRepository.create({
-				name,
-				price,
-				quantity
-     });
-
-			await productRepository.save(product);
-			return product;
-	}
-}
-
-export default CreateProductService;
-
- */
