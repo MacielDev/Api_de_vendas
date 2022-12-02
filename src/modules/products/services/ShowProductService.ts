@@ -1,6 +1,6 @@
 import AppError from '@shared/errors/AppError';
 import Product from '../typeorm/entities/Product';
-import { ProductRepository } from '../typeorm/repositories/ProductRepository/Repository';
+import { ProductsRepository } from '../typeorm/repositories/ProductsRepository';
 
 interface IRequest {
   id: string;
@@ -8,7 +8,7 @@ interface IRequest {
 
 class ShowProductService {
   public async execute({ id }: IRequest): Promise<Product> {
-    const product = await ProductRepository.findOne({
+    const product = await ProductsRepository.findOne({
       where: { id },
     });
     if (!product) {

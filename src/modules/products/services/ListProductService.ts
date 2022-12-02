@@ -1,9 +1,9 @@
-import { ProductRepository } from './../typeorm/repositories/ProductRepository/Repository';
+import { ProductsRepository } from '../typeorm/repositories/ProductsRepository';
 import Product from '../typeorm/entities/Product';
 
 class ListProductService {
   public async execute(): Promise<Product[]> {
-    const products = await ProductRepository.find();
+    const products = await ProductsRepository.find();
     return products;
   }
 }
