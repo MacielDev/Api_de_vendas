@@ -5,7 +5,7 @@ import DeleteProductService from '../services/DeleteProductService';
 import ListProductService from '../services/ListProductService';
 import ShowProductService from '../services/ShowProductService';
 import UpdateProductService from '../services/UpdateProductService';
-import { ProductRepository } from '../typeorm/repositories/ProductsRepository';
+import { ProductsRepository } from '../typeorm/repositories/ProductsRepository';
 
 export default class ProductController {
   //Listar Produtos
@@ -32,7 +32,6 @@ export default class ProductController {
       price,
       quantity,
     });
-    await ProductRepository.save(product);
     return response.json(product);
   }
 
@@ -47,7 +46,7 @@ export default class ProductController {
       price,
       quantity,
     });
-    await ProductRepository.save(product);
+
     return response.json(product);
   }
 
