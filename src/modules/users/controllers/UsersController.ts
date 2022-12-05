@@ -7,7 +7,6 @@ import DeleteUserService from '../services/DeleteUserService';
 import ListUserService from '../services/ListUserService';
 import ShowUserService from '../services/ShowUserService';
 import UpdateUserService from '../services/UpdateUserService';
-import { UsersRepository } from '../typeorm/repositories/UsersRepository';
 
 export default class UserController {
   public async index(request: Request, response: Response): Promise<Response> {
