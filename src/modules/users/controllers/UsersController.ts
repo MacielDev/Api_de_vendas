@@ -11,6 +11,9 @@ import UpdateUserService from '../services/UpdateUserService';
 export default class UserController {
   public async index(request: Request, response: Response): Promise<Response> {
     const listUser = new ListUserService();
+
+    console.log(request.user.id);
+
     const users = await listUser.execute();
     return response.json(users);
   }
