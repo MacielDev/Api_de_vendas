@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 import { DataSource } from 'typeorm';
-import { CreateProduct1669764871054 } from './migrations/1669764871054-CreateProduct';
 
 dotenv.config();
 
