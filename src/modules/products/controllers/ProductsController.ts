@@ -1,11 +1,9 @@
-import AppError from '@shared/errors/AppError';
 import { Request, Response } from 'express';
 import CreateProductService from '../services/CreateProductService';
 import DeleteProductService from '../services/DeleteProductService';
 import ListProductService from '../services/ListProductService';
 import ShowProductService from '../services/ShowProductService';
 import UpdateProductService from '../services/UpdateProductService';
-import { ProductsRepository } from '../typeorm/repositories/ProductsRepository';
 
 export default class ProductController {
   //Listar Produtos
