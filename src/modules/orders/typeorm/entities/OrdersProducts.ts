@@ -15,13 +15,6 @@ class OrdersProducts {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  //about Product
-  @Column({ type: 'decimal' })
-  price: number;
-
-  @Column({ type: 'int' })
-  quantity: number;
-
   //Relationships
 
   //Muitos registros de uma order : Many to one
@@ -33,6 +26,19 @@ class OrdersProducts {
   @ManyToOne(() => Product, product => product.order_products)
   @JoinColumn({ name: 'product_id' })
   product: Product;
+
+  @Column()
+  order_id: string;
+
+  @Column()
+  product_id: string;
+
+  //about Product
+  @Column({ type: 'decimal' })
+  price: number;
+
+  @Column({ type: 'int' })
+  quantity: number;
 
   @CreateDateColumn()
   created_at: Date;
