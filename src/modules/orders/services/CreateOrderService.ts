@@ -16,11 +16,6 @@ interface IRequest {
 
 class CreateOrderService {
   public async execute({ customer_id, products }: IRequest): Promise<Order> {
-    //Precisaremos utilizar os seguintes repositorios:
-    //OrdersRepository
-    //customersRepository
-    //productsRepository
-
     //Verificação se o cliente existe
     const customerExists = await CustomersRepository.findById(customer_id);
     if (!customerExists) {
@@ -30,7 +25,7 @@ class CreateOrderService {
     //Verificações com relação aos produtos :
 
     const existsProducts = await ProductsRepository.findAllByIds(products);
-    if (!existsProducts?.length) {
+    if (!existsProducts.length) {
       throw new AppError('Could not find products with the given ids.');
     }
 
@@ -85,7 +80,7 @@ class CreateOrderService {
       id: product.product_id,
       quantity:
         existsProducts.filter(
-          findedProduct => findedProduct.id === product.id,
+          findedProduct => findedProduct.id === product.product_id,
         )[0].quantity - product.quantity,
     }));
     await ProductsRepository.save(updatedProductQuantity);

@@ -15,11 +15,15 @@ export const ProductsRepository = dataSource.getRepository(Product).extend({
     });
     return product;
   },
-  async findAllByIds(products: IFindProducts[]): Promise<Product[] | null> {
+  async findAllByIds(products: IFindProducts[]): Promise<Product[]> {
     const productIds = products.map(product => product.id);
-    const existsProducts = await this.find({
-      where: { id: In(productIds) },
+
+    const existentProducts = await this.find({
+      where: {
+        id: In(productIds),
+      },
     });
-    return existsProducts;
+    console.log(existentProducts);
+    return existentProducts;
   },
 });
