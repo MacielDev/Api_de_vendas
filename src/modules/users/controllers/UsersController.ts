@@ -1,12 +1,11 @@
 import AppError from '@shared/errors/AppError';
 import { Request, Response } from 'express';
-import { toNamespacedPath } from 'path';
-import { Index } from 'typeorm';
 import CreateUserService from '../services/CreateUserService';
 import DeleteUserService from '../services/DeleteUserService';
 import ListUserService from '../services/ListUserService';
 import ShowUserService from '../services/ShowUserService';
 import UpdateUserService from '../services/UpdateUserService';
+import { instanceToInstance } from 'class-transformer';
 
 export default class UserController {
   public async index(request: Request, response: Response): Promise<Response> {
@@ -15,14 +14,14 @@ export default class UserController {
     console.log(request.user.id);
 
     const users = await listUser.execute();
-    return response.json(users);
+    return response.json(instanceToInstance(users));
   }
 
   public async show(request: Request, response: Response): Promise<Response> {
     const { id } = request.params;
     const showUser = new ShowUserService();
     const user = await showUser.execute({ id });
-    return response.json(user);
+    return response.json(instanceToInstance(instanceToInstance(user)));
   }
 
   public async create(request: Request, response: Response): Promise<Response> {
@@ -33,7 +32,7 @@ export default class UserController {
       email,
       password,
     });
-    return response.json(user);
+    return response.json(instanceToInstance(instanceToInstance(user)));
   }
 
   public async update(request: Request, response: Response): Promise<Response> {
@@ -46,7 +45,7 @@ export default class UserController {
       email,
       password,
     });
-    return response.json(user);
+    return response.json(instanceToInstance(user));
   }
 
   public async delete(request: Request, response: Response): Promise<Response> {

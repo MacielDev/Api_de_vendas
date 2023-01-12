@@ -1,5 +1,6 @@
 import { dataSource } from '@shared/infra/typeorm';
 import Customer from '../entities/Customer';
+import { pagination } from 'typeorm-pagination';
 
 export const CustomersRepository = dataSource.getRepository(Customer).extend({
   async findByName(name: string): Promise<Customer | null> {

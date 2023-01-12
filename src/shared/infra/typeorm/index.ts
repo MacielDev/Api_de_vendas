@@ -13,7 +13,3 @@ export const dataSource = new DataSource({
   entities: ['./src/modules/**/typeorm/entities/*.ts'],
   migrations: ['./src/shared/**/typeorm/migrations/*.ts'],
 });
-
-// migrations: //`${__dirname}/**/migrations/*.{ts,js}`
-//entities: `${__dirname}/**/entities/*.{ts,js}`
-//CreateProduct1669764871054

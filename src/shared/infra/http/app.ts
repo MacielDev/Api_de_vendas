@@ -4,10 +4,13 @@ import 'express-async-errors';
 import routes from './routes';
 import cors from 'cors';
 import { errors } from 'celebrate';
+//import { pagination } from 'typeorm-pagination';
 import AppError from '@shared/errors/AppError';
 import '@shared/infra/typeorm';
 
 const app = express();
+
+//app.use(pagination);
 
 app.use(cors());
 
